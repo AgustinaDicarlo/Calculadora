@@ -6,7 +6,7 @@ def limpiar_pantalla():
 def pausar():
     os.system("pause")
 
-def menu():
+def menu(a:int,b:int):
     """Muestra el menú de opciones a elegir
 
     Returns:
@@ -14,14 +14,15 @@ def menu():
     """
     limpiar_pantalla()
     print("Calculadora iniciada \n")
-    print("1. Ingresar 1er operando (A)")
-    print("2. Ingresar 2do operando (B)")
+    print(f"1. Ingresar 1er operando (A)\n» {a}")
+    print(f"2. Ingresar 2do operando (B)\n» {b}")
     print("3. Calcular todas las operaciones")
     print("4. Informar resultados")
     print("5. Salir")
     return input("Elija una opción:\n ")
 
 
+##########################################OPERACIONES##############################################
 def sumar(a:int, b:int)->int:
     """Hace una suma entre dos números
 
@@ -34,7 +35,6 @@ def sumar(a:int, b:int)->int:
     """
     resultado = a + b
     return resultado
-
 
 def restar(a:int, b:int)->int:
     """Hace una resta entre dos números
@@ -49,7 +49,6 @@ def restar(a:int, b:int)->int:
     resultado = a - b
     return resultado
 
-
 def multiplicar(a:int, b:int)->int:
     """Hace una multiplicación entre dos números
 
@@ -63,7 +62,6 @@ def multiplicar(a:int, b:int)->int:
     resultado = a * b
     return resultado
 
-
 def dividir(a:int,b:int)->float:
     """Hace una división entre dos números
 
@@ -74,7 +72,15 @@ def dividir(a:int,b:int)->float:
     Returns:
         float: Devuelve el valor de la división
     """
-    resultado = a / b
+    
+    try:
+        resultado = a / b
+    except ZeroDivisionError:
+        print("Error. No se puede dividir por 0")
+        resultado = "No se pudo dividir porque el divisor es 0"
+    else:
+        resultado
+
     return resultado
 
 def factorial(n:int)->int:
@@ -91,24 +97,27 @@ def factorial(n:int)->int:
         resultado *= i
     
     return resultado
+######################################################################################################
 
-#def calcular_operaciones(primerValor:any,segundoValor:any)->any:
-    """Llama y junta funciones para realizar las siguientes operaciones:
-    -suma
-    -resta
-    -multiplicación
-    -división
-    -factoreo
+
+def mostrar_mensaje_resultados(resultadoSumar,resultadoRestar,resultadoMultiplicar,
+                               resultadoDividir,resultadoFactoreoA,resultadoFactoreoB):
+    """Junta los resultados de los calculos para mostrarlos en un mensaje
 
     Args:
-        primerValor (any): El primer valor para realizar el cálculo
-        segundoValor (any): El segundo valor para realizar el cálculo
+        resultadoSumar (int): Resultado de la suma
+        resultadoRestar (int): Resultado de la resta 
+        resultadoMultiplicar (int): Resultado de la multiplicación
+        resultadoDividir (float): Resultado de la división
+        resultadoFactoreoA (int): Resultado de la factoreo de A
+        resultadoFactoreoB (int): Resultado de la factoreo de B
+    """
+    print(f"El resultado de A + B es: {resultadoSumar}")
+    print(f"El resultado de A - B es: {resultadoRestar}")
+    print(f"El resultado de A * B es: {resultadoMultiplicar}")
+    print(f"El resultado de A / B es: {resultadoDividir}")
+    print(f"El resultado de A! es {resultadoFactoreoA} y el resultado de B! es {resultadoFactoreoB}")
 
     
-    """
-    sumar(primerValor,segundoValor)
-    restar(primerValor,segundoValor)
-    multiplicar(primerValor,segundoValor)
-    dividir(primerValor,segundoValor)
-    factorial(primerValor)
-    factorial(segundoValor)
+
+print(dividir(6,0))
