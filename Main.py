@@ -3,8 +3,10 @@ from Funciones import*
 primerValor = 0
 segundoValor = 0
 seguir = True
+
 while seguir == True:
     match menu(primerValor,segundoValor):
+
         case "1":
             primerValor = input("Ingrese el primer valor: ")
             if (primerValor.isdigit()):
@@ -31,6 +33,7 @@ while seguir == True:
 
         case "4":
             print(f"Dados los números {primerValor} y {segundoValor}...\n")
+
             mostrar_mensaje_resultados(resultadoSumar,resultadoRestar,resultadoMultiplicar,resultadoDividir,
                                        resultadoFactoreoA,resultadoFactoreoB)
 

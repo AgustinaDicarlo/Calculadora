@@ -112,12 +112,10 @@ def mostrar_mensaje_resultados(resultadoSumar,resultadoRestar,resultadoMultiplic
         resultadoFactoreoA (int): Resultado de la factoreo de A
         resultadoFactoreoB (int): Resultado de la factoreo de B
     """
+    
     print(f"El resultado de A + B es: {resultadoSumar}")
     print(f"El resultado de A - B es: {resultadoRestar}")
     print(f"El resultado de A * B es: {resultadoMultiplicar}")
     print(f"El resultado de A / B es: {resultadoDividir}")
     print(f"El resultado de A! es {resultadoFactoreoA} y el resultado de B! es {resultadoFactoreoB}")
 
-    
-
-print(dividir(6,0))
