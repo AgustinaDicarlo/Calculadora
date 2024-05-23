@@ -1,3 +1,5 @@
+from Funciones import*
+
 print("Calculadora iniciada \n")
 print("1. Ingresar 1er operando")
 print("2. Ingresar 2do operando")
@@ -15,6 +17,13 @@ while rta == "s":
         case "2":
             segundoValor = input("Ingrese el segundo valor")
         case "3":
-            
+            resultadoSumar = sumar()
+            resultadoRestar = restar()
+            resultadoMultiplicar = multiplicar()
+            resultadoDividir = dividir()
+            resultadoFactoreo = factorial()
+
         case "4":
+            pass
         case "5":
+            break
