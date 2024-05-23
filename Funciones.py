@@ -1,3 +1,26 @@
+import os
+
+def limpiar_pantalla():
+    os.system("cls")
+
+def pausar():
+    os.system("pause")
+
+def menu():
+    """Muestra el menú de opciones a elegir
+
+    Returns:
+        str: Devuelve la opción elegida
+    """
+    limpiar_pantalla()
+    print("Calculadora iniciada \n")
+    print("1. Ingresar 1er operando (A)")
+    print("2. Ingresar 2do operando (B)")
+    print("3. Calcular todas las operaciones")
+    print("4. Informar resultados")
+    print("5. Salir")
+    return input("Elija una opción:\n ")
+
 
 def sumar(a:int, b:int)->int:
     """Hace una suma entre dos números
@@ -69,3 +92,23 @@ def factorial(n:int)->int:
     
     return resultado
 
+#def calcular_operaciones(primerValor:any,segundoValor:any)->any:
+    """Llama y junta funciones para realizar las siguientes operaciones:
+    -suma
+    -resta
+    -multiplicación
+    -división
+    -factoreo
+
+    Args:
+        primerValor (any): El primer valor para realizar el cálculo
+        segundoValor (any): El segundo valor para realizar el cálculo
+
+    
+    """
+    sumar(primerValor,segundoValor)
+    restar(primerValor,segundoValor)
+    multiplicar(primerValor,segundoValor)
+    dividir(primerValor,segundoValor)
+    factorial(primerValor)
+    factorial(segundoValor)
