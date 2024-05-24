@@ -1,10 +1,10 @@
 from Funciones import*
 
+primerValor = 0
+segundoValor = 0
 
 seguir = "s"
 while seguir == "s":
-    primerValor = 0
-    segundoValor = 0
 
     match menu(primerValor,segundoValor):
 
