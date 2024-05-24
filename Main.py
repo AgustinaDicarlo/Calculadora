@@ -1,10 +1,11 @@
 from Funciones import*
 
-primerValor = 0
-segundoValor = 0
-seguir = True
 
-while seguir == True:
+seguir = "s"
+while seguir == "s":
+    primerValor = 0
+    segundoValor = 0
+
     match menu(primerValor,segundoValor):
 
         case "1":
@@ -30,10 +31,10 @@ while seguir == True:
                                        resultadoFactoreoA,resultadoFactoreoB)
 
         case "5":
-            respuesta = input(print("Desea salir?")).lower
+            respuesta = input("Desea salir? ").lower()
             if respuesta == "s":
-                seguir = False
-            else:
-                seguir = True
+                seguir = "n"
+                continue
     pausar()
+
 print("Fin del programa...")
