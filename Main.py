@@ -8,18 +8,10 @@ while seguir == True:
     match menu(primerValor,segundoValor):
 
         case "1":
-            primerValor = input("Ingrese el primer valor: ")
-            if (primerValor.isdigit()):
-                primerValor = int(primerValor)
-            else:
-                print("Eso no es un número entero positivo")
+            primerValor = pedir_validar_int(primerValor, "primer valor")
 
         case "2":
-            segundoValor = input("Ingrese el segundo valor: ")
-            if (segundoValor.isdigit()):
-                segundoValor = int(segundoValor)
-            else:
-                print("Eso no es un número entero positivo")
+            segundoValor = pedir_validar_int(primerValor, "segundo valor")
 
         case "3":
             resultadoSumar = sumar(primerValor,segundoValor)

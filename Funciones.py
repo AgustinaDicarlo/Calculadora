@@ -119,3 +119,22 @@ def mostrar_mensaje_resultados(resultadoSumar,resultadoRestar,resultadoMultiplic
     print(f"El resultado de A / B es: {resultadoDividir}")
     print(f"El resultado de A! es {resultadoFactoreoA} y el resultado de B! es {resultadoFactoreoB}")
 
+def pedir_validar_int(validar,texto):
+    """Pide y valida el valor para que sea un entero
+
+    Args:
+        validar (any): Valor a validar
+        texto (str): mensaje
+
+    Returns:
+        int: El valor ya validado
+    """
+    while True:
+        validar = input(f"Ingrese el {texto} valor: \n")
+        if (validar.isdigit()):
+            validar = int(validar)
+            break
+        else:
+            print("Eso no es un número positivo\n")
+
+    return validar
